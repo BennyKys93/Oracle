@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+
+    <!-- Console Appender for standard output -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{ISO8601} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- File Appender for persistent logging to a file -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/app.log</file>
+        <encoder>
+            <pattern>%d{ISO8601} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Logback internal debug for internal logback events -->
+    <logger name="ch.qos.logback" level="info" />
+
+    <!-- Java and javax logging -->
+    <logger name="java.lang" level="info" />
+    <logger name="javax" level="info" />
+
+    <!-- Specific loggers for Dropwizard and Jetty -->
+    <logger name="io.dropwizard" level="info" />
+    <logger name="org.eclipse.jetty" level="info" />
+
+    <!-- Add custom application logger here (adjust to your package) -->
+    <logger name="com.yourapp" level="info" />
+
+    <!-- Root logger: Changed to debug for more detailed logs -->
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>

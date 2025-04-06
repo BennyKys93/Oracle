@@ -1,0 +1,14 @@
+server:
+  type: simple
+  applicationContextPath: /
+  rootPath: /api
+  connector:
+    type: http
+    port: 8080
+
+logging:
+  level: INFO
+  loggers:
+    io.dropwizard: INFO
+    org.eclipse.jetty: INFO
+
