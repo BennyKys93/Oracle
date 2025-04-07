@@ -35,5 +35,4 @@ RUN chmod 644 /app/application.yaml
 EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "/app/survey-management-system.jar", "server"]
-CMD ["/app/application.yaml"]
 
